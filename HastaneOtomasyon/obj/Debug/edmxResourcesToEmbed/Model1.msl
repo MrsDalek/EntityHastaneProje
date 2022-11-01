@@ -1,0 +1,213 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="HastaneDLLModelStoreContainer" CdmEntityContainer="HastaneDLLEntities">
+    <EntitySetMapping Name="AltBolges">
+      <EntityTypeMapping TypeName="HastaneDLLModel.AltBolge">
+        <MappingFragment StoreEntitySet="AltBolge">
+          <ScalarProperty Name="AltBolgeID" ColumnName="AltBolgeID" />
+          <ScalarProperty Name="AltBolgeAdi" ColumnName="AltBolgeAdi" />
+          <ScalarProperty Name="BolgeID" ColumnName="BolgeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Bolges">
+      <EntityTypeMapping TypeName="HastaneDLLModel.Bolge">
+        <MappingFragment StoreEntitySet="Bolge">
+          <ScalarProperty Name="BolgeID" ColumnName="BolgeID" />
+          <ScalarProperty Name="BolgeAdi" ColumnName="BolgeAdi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Doktorlars">
+      <EntityTypeMapping TypeName="HastaneDLLModel.Doktorlar">
+        <MappingFragment StoreEntitySet="Doktorlar">
+          <ScalarProperty Name="DoktorID" ColumnName="DoktorID" />
+          <ScalarProperty Name="TBID" ColumnName="TBID" />
+          <ScalarProperty Name="PersonelID" ColumnName="PersonelID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Hastas">
+      <EntityTypeMapping TypeName="HastaneDLLModel.Hasta">
+        <MappingFragment StoreEntitySet="Hasta">
+          <ScalarProperty Name="HastaYas" ColumnName="HastaYas" />
+          <ScalarProperty Name="HastaTel" ColumnName="HastaTel" />
+          <ScalarProperty Name="HastaAdres" ColumnName="HastaAdres" />
+          <ScalarProperty Name="HastaKilo" ColumnName="HastaKilo" />
+          <ScalarProperty Name="HastaBoy" ColumnName="HastaBoy" />
+          <ScalarProperty Name="HastaKanGrubu" ColumnName="HastaKanGrubu" />
+          <ScalarProperty Name="HastaID" ColumnName="HastaID" />
+          <ScalarProperty Name="HastaAdi" ColumnName="HastaAdi" />
+          <ScalarProperty Name="HastaSoyAdi" ColumnName="HastaSoyAdi" />
+          <ScalarProperty Name="Tc_Passaport" ColumnName="Tc_Passaport" />
+          <ScalarProperty Name="durum" ColumnName="durum" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Hastanelers">
+      <EntityTypeMapping TypeName="HastaneDLLModel.Hastaneler">
+        <MappingFragment StoreEntitySet="Hastaneler">
+          <ScalarProperty Name="HastaneID" ColumnName="HastaneID" />
+          <ScalarProperty Name="HastaneAdi" ColumnName="HastaneAdi" />
+          <ScalarProperty Name="AltBolgeID" ColumnName="AltBolgeID" />
+          <ScalarProperty Name="HastaneTel" ColumnName="HastaneTel" />
+          <ScalarProperty Name="HastaneAdres" ColumnName="HastaneAdres" />
+          <ScalarProperty Name="HastaneMail" ColumnName="HastaneMail" />
+          <ScalarProperty Name="durum" ColumnName="durum" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HastaTahlils">
+      <EntityTypeMapping TypeName="HastaneDLLModel.HastaTahlil">
+        <MappingFragment StoreEntitySet="HastaTahlil">
+          <ScalarProperty Name="TahlilID" ColumnName="TahlilID" />
+          <ScalarProperty Name="HastaID" ColumnName="HastaID" />
+          <ScalarProperty Name="TahlilTarih" ColumnName="TahlilTarih" />
+          <ScalarProperty Name="SonucTarih" ColumnName="SonucTarih" />
+          <ScalarProperty Name="TahlilSonuc" ColumnName="TahlilSonuc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Muayenes">
+      <EntityTypeMapping TypeName="HastaneDLLModel.Muayene">
+        <MappingFragment StoreEntitySet="Muayene">
+          <ScalarProperty Name="MID" ColumnName="MID" />
+          <ScalarProperty Name="DoktorID" ColumnName="DoktorID" />
+          <ScalarProperty Name="HastaID" ColumnName="HastaID" />
+          <ScalarProperty Name="MTURID" ColumnName="MTURID" />
+          <ScalarProperty Name="MGiris" ColumnName="MGiris" />
+          <ScalarProperty Name="MCikis" ColumnName="MCikis" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MuayeneTedavis">
+      <EntityTypeMapping TypeName="HastaneDLLModel.MuayeneTedavi">
+        <MappingFragment StoreEntitySet="MuayeneTedavi">
+          <ScalarProperty Name="MID" ColumnName="MID" />
+          <ScalarProperty Name="TedaviID" ColumnName="TedaviID" />
+          <ScalarProperty Name="ReceteAdi" ColumnName="ReceteAdi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MuayeneTurs">
+      <EntityTypeMapping TypeName="HastaneDLLModel.MuayeneTur">
+        <MappingFragment StoreEntitySet="MuayeneTur">
+          <ScalarProperty Name="MTURID" ColumnName="MTURID" />
+          <ScalarProperty Name="MuayeneTuru" ColumnName="MuayeneTuru" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PersonelDetays">
+      <EntityTypeMapping TypeName="HastaneDLLModel.PersonelDetay">
+        <MappingFragment StoreEntitySet="PersonelDetay">
+          <ScalarProperty Name="PDID" ColumnName="PDID" />
+          <ScalarProperty Name="PersonelYas" ColumnName="PersonelYas" />
+          <ScalarProperty Name="PersonelCinsiyet" ColumnName="PersonelCinsiyet" />
+          <ScalarProperty Name="PersonelTel" ColumnName="PersonelTel" />
+          <ScalarProperty Name="PersonelMail" ColumnName="PersonelMail" />
+          <ScalarProperty Name="PersonelAdres" ColumnName="PersonelAdres" />
+          <ScalarProperty Name="durum" ColumnName="durum" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Personellers">
+      <EntityTypeMapping TypeName="HastaneDLLModel.Personeller">
+        <MappingFragment StoreEntitySet="Personeller">
+          <ScalarProperty Name="PersonelID" ColumnName="PersonelID" />
+          <ScalarProperty Name="PersonelAdi" ColumnName="PersonelAdi" />
+          <ScalarProperty Name="PersonelSoyad" ColumnName="PersonelSoyad" />
+          <ScalarProperty Name="PersonelTc" ColumnName="PersonelTc" />
+          <ScalarProperty Name="HastaneID" ColumnName="HastaneID" />
+          <ScalarProperty Name="UnvanID" ColumnName="UnvanID" />
+          <ScalarProperty Name="Durum" ColumnName="Durum" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="HastaneDLLModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tahlillers">
+      <EntityTypeMapping TypeName="HastaneDLLModel.Tahliller">
+        <MappingFragment StoreEntitySet="Tahliller">
+          <ScalarProperty Name="TahlilID" ColumnName="TahlilID" />
+          <ScalarProperty Name="TahlilTur" ColumnName="TahlilTur" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tedavis">
+      <EntityTypeMapping TypeName="HastaneDLLModel.Tedavi">
+        <MappingFragment StoreEntitySet="Tedavi">
+          <ScalarProperty Name="TedaviID" ColumnName="TedaviID" />
+          <ScalarProperty Name="TedaviTanim" ColumnName="TedaviTanim" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TibbiBirimlers">
+      <EntityTypeMapping TypeName="HastaneDLLModel.TibbiBirimler">
+        <MappingFragment StoreEntitySet="TibbiBirimler">
+          <ScalarProperty Name="TBID" ColumnName="TBID" />
+          <ScalarProperty Name="TibbiAdi" ColumnName="TibbiAdi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Unvans">
+      <EntityTypeMapping TypeName="HastaneDLLModel.Unvan">
+        <MappingFragment StoreEntitySet="Unvan">
+          <ScalarProperty Name="UnvanID" ColumnName="UnvanID" />
+          <ScalarProperty Name="UnvanAdi" ColumnName="UnvanAdi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vw_Doktor">
+      <EntityTypeMapping TypeName="HastaneDLLModel.vw_Doktor">
+        <MappingFragment StoreEntitySet="vw_Doktor">
+          <ScalarProperty Name="DoktorID" ColumnName="DoktorID" />
+          <ScalarProperty Name="TBID" ColumnName="TBID" />
+          <ScalarProperty Name="Doktor" ColumnName="Doktor" />
+          <ScalarProperty Name="TibbiAdi" ColumnName="TibbiAdi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="HastaneDLLModel.Store.sp_alterdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="HastaneDLLModel.Store.sp_creatediagram" />
+    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="HastaneDLLModel.Store.sp_dropdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="HastaneDLLModel.Store.sp_helpdiagramdefinition">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HastaneDLLModel.sp_helpdiagramdefinition_Result">
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="HastaneDLLModel.Store.sp_helpdiagrams">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HastaneDLLModel.sp_helpdiagrams_Result">
+          <ScalarProperty Name="Database" ColumnName="Database" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Owner" ColumnName="Owner" />
+          <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="HastaneDLLModel.Store.sp_renamediagram" />
+    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="HastaneDLLModel.Store.sp_upgraddiagrams" />
+    <EntitySetMapping Name="PersonelSifres">
+      <EntityTypeMapping TypeName="HastaneDLLModel.PersonelSifre">
+        <MappingFragment StoreEntitySet="PersonelSifre">
+          <ScalarProperty Name="Durum" ColumnName="Durum" />
+          <ScalarProperty Name="Sifre" ColumnName="Sifre" />
+          <ScalarProperty Name="PSifreID" ColumnName="PSifreID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

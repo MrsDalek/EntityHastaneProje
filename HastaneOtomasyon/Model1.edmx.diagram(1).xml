@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="45f61c965fe84a939d67d1e4de5a9373" Name="Diagram1">
+        <EntityTypeShape EntityType="HastaneModel.AltBolge" Width="1.5" PointX="3" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="HastaneModel.Bolge" Width="1.5" PointX="0.75" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="HastaneModel.Doktorlar" Width="1.5" PointX="9.75" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="HastaneModel.Hasta" Width="1.5" PointX="9.75" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="HastaneModel.HastaDetay" Width="1.5" PointX="12" PointY="13.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="HastaneModel.Hastaneler" Width="1.5" PointX="5.25" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HastaneModel.HastaTahlil" Width="1.5" PointX="12" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HastaneModel.Muayene" Width="1.5" PointX="12" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="HastaneModel.MuayeneTedavi" Width="1.5" PointX="14.25" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="HastaneModel.MuayeneTur" Width="1.5" PointX="9.75" PointY="14" IsExpanded="true" />
+        <EntityTypeShape EntityType="HastaneModel.PersonelDetay" Width="1.5" PointX="9.75" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="HastaneModel.Personeller" Width="1.5" PointX="7.5" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="HastaneModel.sysdiagram" Width="1.5" PointX="0.75" PointY="9.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="HastaneModel.Tahliller" Width="1.5" PointX="9.75" PointY="17.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="HastaneModel.Tedavi" Width="1.5" PointX="12" PointY="10.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="HastaneModel.TibbiBirimler" Width="1.5" PointX="7.5" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="HastaneModel.Unvan" Width="1.5" PointX="5.25" PointY="3.25" IsExpanded="true" />
+        <AssociationConnector Association="HastaneModel.FK_AltBolge_Bolge" ManuallyRouted="false" />
+        <AssociationConnector Association="HastaneModel.FK_Hastaneler_AltBolge" ManuallyRouted="false" />
+        <AssociationConnector Association="HastaneModel.FK_Doktorlar_Personeller" ManuallyRouted="false" />
+        <AssociationConnector Association="HastaneModel.FK_Doktorlar_TibbiBirimler" ManuallyRouted="false" />
+        <AssociationConnector Association="HastaneModel.FK_Muayene_Doktorlar" ManuallyRouted="false" />
+        <AssociationConnector Association="HastaneModel.FK_HastaDetay_Hasta" ManuallyRouted="false" />
+        <AssociationConnector Association="HastaneModel.FK_HastaTahlil_Hasta" ManuallyRouted="false" />
+        <AssociationConnector Association="HastaneModel.FK_Muayene_Hasta" ManuallyRouted="false" />
+        <AssociationConnector Association="HastaneModel.FK_Personeller_Hastaneler" ManuallyRouted="false" />
+        <AssociationConnector Association="HastaneModel.FK_HastaTahlil_Tahliller" ManuallyRouted="false" />
+        <AssociationConnector Association="HastaneModel.FK_Muayene_MuayeneTur" ManuallyRouted="false" />
+        <AssociationConnector Association="HastaneModel.FK_MuayeneTedavi_Muayene" ManuallyRouted="false" />
+        <AssociationConnector Association="HastaneModel.FK_MuayeneTedavi_Tedavi" ManuallyRouted="false" />
+        <AssociationConnector Association="HastaneModel.FK_PersonelDetay_Personeller" ManuallyRouted="false" />
+        <AssociationConnector Association="HastaneModel.FK_Personeller_Unvan" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,1256 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="HastaneDLLModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="AltBolge">
+          <Key>
+            <PropertyRef Name="AltBolgeID" />
+          </Key>
+          <Property Name="AltBolgeID" Type="int" Nullable="false" />
+          <Property Name="AltBolgeAdi" Type="nvarchar" MaxLength="50" />
+          <Property Name="BolgeID" Type="int" />
+        </EntityType>
+        <EntityType Name="Bolge">
+          <Key>
+            <PropertyRef Name="BolgeID" />
+          </Key>
+          <Property Name="BolgeID" Type="int" Nullable="false" />
+          <Property Name="BolgeAdi" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Doktorlar">
+          <Key>
+            <PropertyRef Name="DoktorID" />
+          </Key>
+          <Property Name="DoktorID" Type="int" Nullable="false" />
+          <Property Name="TBID" Type="int" />
+          <Property Name="PersonelID" Type="int" />
+        </EntityType>
+        <EntityType Name="Hasta">
+          <Key>
+            <PropertyRef Name="HastaID" />
+          </Key>
+          <Property Name="HastaID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="HastaAdi" Type="nvarchar" MaxLength="50" />
+          <Property Name="HastaSoyAdi" Type="nvarchar" MaxLength="50" />
+          <Property Name="Tc_Passaport" Type="nchar" MaxLength="10" />
+          <Property Name="HastaKanGrubu" Type="nvarchar" MaxLength="50" />
+          <Property Name="HastaBoy" Type="nvarchar" MaxLength="50" />
+          <Property Name="HastaKilo" Type="nvarchar" MaxLength="50" />
+          <Property Name="HastaAdres" Type="nvarchar" MaxLength="50" />
+          <Property Name="HastaTel" Type="nvarchar" MaxLength="50" />
+          <Property Name="HastaYas" Type="int" />
+          <Property Name="durum" Type="bit" />
+        </EntityType>
+        <EntityType Name="Hastaneler">
+          <Key>
+            <PropertyRef Name="HastaneID" />
+          </Key>
+          <Property Name="HastaneID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="HastaneAdi" Type="nvarchar" MaxLength="50" />
+          <Property Name="AltBolgeID" Type="int" />
+          <Property Name="HastaneTel" Type="nvarchar" MaxLength="50" />
+          <Property Name="HastaneAdres" Type="nvarchar" MaxLength="255" />
+          <Property Name="HastaneMail" Type="nvarchar" MaxLength="50" />
+          <Property Name="durum" Type="bit" />
+        </EntityType>
+        <EntityType Name="HastaTahlil">
+          <Key>
+            <PropertyRef Name="TahlilID" />
+            <PropertyRef Name="HastaID" />
+          </Key>
+          <Property Name="TahlilID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="HastaID" Type="int" Nullable="false" />
+          <Property Name="TahlilTarih" Type="date" />
+          <Property Name="SonucTarih" Type="date" />
+          <Property Name="TahlilSonuc" Type="nvarchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="Muayene">
+          <Key>
+            <PropertyRef Name="MID" />
+          </Key>
+          <Property Name="MID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DoktorID" Type="int" />
+          <Property Name="HastaID" Type="int" />
+          <Property Name="MTURID" Type="int" />
+          <Property Name="MGiris" Type="date" />
+          <Property Name="MCikis" Type="date" />
+        </EntityType>
+        <EntityType Name="MuayeneTedavi">
+          <Key>
+            <PropertyRef Name="MID" />
+            <PropertyRef Name="TedaviID" />
+          </Key>
+          <Property Name="MID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TedaviID" Type="int" Nullable="false" />
+          <Property Name="ReceteAdi" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="MuayeneTur">
+          <Key>
+            <PropertyRef Name="MTURID" />
+          </Key>
+          <Property Name="MTURID" Type="int" Nullable="false" />
+          <Property Name="MuayeneTuru" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="PersonelDetay">
+          <Key>
+            <PropertyRef Name="PDID" />
+          </Key>
+          <Property Name="PDID" Type="int" Nullable="false" />
+          <Property Name="PersonelYas" Type="int" />
+          <Property Name="PersonelCinsiyet" Type="nvarchar" MaxLength="50" />
+          <Property Name="PersonelTel" Type="nvarchar" MaxLength="50" />
+          <Property Name="PersonelMail" Type="nvarchar" MaxLength="50" />
+          <Property Name="PersonelAdres" Type="nvarchar" MaxLength="50" />
+          <Property Name="durum" Type="bit" />
+        </EntityType>
+        <EntityType Name="Personeller">
+          <Key>
+            <PropertyRef Name="PersonelID" />
+          </Key>
+          <Property Name="PersonelID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PersonelAdi" Type="nvarchar" MaxLength="50" />
+          <Property Name="PersonelSoyad" Type="nvarchar" MaxLength="50" />
+          <Property Name="PersonelTc" Type="nvarchar" MaxLength="50" />
+          <Property Name="HastaneID" Type="int" />
+          <Property Name="UnvanID" Type="int" />
+          <Property Name="Durum" Type="bit" />
+        </EntityType>
+        <EntityType Name="PersonelSifre">
+          <Key>
+            <PropertyRef Name="PSifreID" />
+          </Key>
+          <Property Name="PSifreID" Type="int" Nullable="false" />
+          <Property Name="Sifre" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Durum" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="Tahliller">
+          <Key>
+            <PropertyRef Name="TahlilID" />
+          </Key>
+          <Property Name="TahlilID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TahlilTur" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Tedavi">
+          <Key>
+            <PropertyRef Name="TedaviID" />
+          </Key>
+          <Property Name="TedaviID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TedaviTanim" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="TibbiBirimler">
+          <Key>
+            <PropertyRef Name="TBID" />
+          </Key>
+          <Property Name="TBID" Type="int" Nullable="false" />
+          <Property Name="TibbiAdi" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Unvan">
+          <Key>
+            <PropertyRef Name="UnvanID" />
+          </Key>
+          <Property Name="UnvanID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UnvanAdi" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'HastaneDLL.dbo.vw_Doktor' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vw_Doktor">
+          <Key>
+            <PropertyRef Name="DoktorID" />
+            <PropertyRef Name="TBID" />
+            <PropertyRef Name="TibbiAdi" />
+          </Key>
+          <Property Name="DoktorID" Type="int" Nullable="false" />
+          <Property Name="TBID" Type="int" Nullable="false" />
+          <Property Name="Doktor" Type="nvarchar" MaxLength="101" />
+          <Property Name="TibbiAdi" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_AltBolge_Bolge">
+          <End Role="Bolge" Type="Self.Bolge" Multiplicity="0..1" />
+          <End Role="AltBolge" Type="Self.AltBolge" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Bolge">
+              <PropertyRef Name="BolgeID" />
+            </Principal>
+            <Dependent Role="AltBolge">
+              <PropertyRef Name="BolgeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Doktorlar_Personeller">
+          <End Role="Personeller" Type="Self.Personeller" Multiplicity="0..1" />
+          <End Role="Doktorlar" Type="Self.Doktorlar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Personeller">
+              <PropertyRef Name="PersonelID" />
+            </Principal>
+            <Dependent Role="Doktorlar">
+              <PropertyRef Name="PersonelID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Doktorlar_TibbiBirimler">
+          <End Role="TibbiBirimler" Type="Self.TibbiBirimler" Multiplicity="0..1" />
+          <End Role="Doktorlar" Type="Self.Doktorlar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TibbiBirimler">
+              <PropertyRef Name="TBID" />
+            </Principal>
+            <Dependent Role="Doktorlar">
+              <PropertyRef Name="TBID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Hastaneler_AltBolge">
+          <End Role="AltBolge" Type="Self.AltBolge" Multiplicity="0..1" />
+          <End Role="Hastaneler" Type="Self.Hastaneler" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AltBolge">
+              <PropertyRef Name="AltBolgeID" />
+            </Principal>
+            <Dependent Role="Hastaneler">
+              <PropertyRef Name="AltBolgeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_HastaTahlil_Hasta">
+          <End Role="Hasta" Type="Self.Hasta" Multiplicity="1" />
+          <End Role="HastaTahlil" Type="Self.HastaTahlil" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Hasta">
+              <PropertyRef Name="HastaID" />
+            </Principal>
+            <Dependent Role="HastaTahlil">
+              <PropertyRef Name="HastaID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_HastaTahlil_Tahliller">
+          <End Role="Tahliller" Type="Self.Tahliller" Multiplicity="1" />
+          <End Role="HastaTahlil" Type="Self.HastaTahlil" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tahliller">
+              <PropertyRef Name="TahlilID" />
+            </Principal>
+            <Dependent Role="HastaTahlil">
+              <PropertyRef Name="TahlilID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Muayene_Doktorlar">
+          <End Role="Doktorlar" Type="Self.Doktorlar" Multiplicity="0..1" />
+          <End Role="Muayene" Type="Self.Muayene" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Doktorlar">
+              <PropertyRef Name="DoktorID" />
+            </Principal>
+            <Dependent Role="Muayene">
+              <PropertyRef Name="DoktorID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Muayene_Hasta">
+          <End Role="Hasta" Type="Self.Hasta" Multiplicity="0..1" />
+          <End Role="Muayene" Type="Self.Muayene" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Hasta">
+              <PropertyRef Name="HastaID" />
+            </Principal>
+            <Dependent Role="Muayene">
+              <PropertyRef Name="HastaID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Muayene_MuayeneTur">
+          <End Role="MuayeneTur" Type="Self.MuayeneTur" Multiplicity="0..1" />
+          <End Role="Muayene" Type="Self.Muayene" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MuayeneTur">
+              <PropertyRef Name="MTURID" />
+            </Principal>
+            <Dependent Role="Muayene">
+              <PropertyRef Name="MTURID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MuayeneTedavi_Muayene">
+          <End Role="Muayene" Type="Self.Muayene" Multiplicity="1" />
+          <End Role="MuayeneTedavi" Type="Self.MuayeneTedavi" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Muayene">
+              <PropertyRef Name="MID" />
+            </Principal>
+            <Dependent Role="MuayeneTedavi">
+              <PropertyRef Name="MID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MuayeneTedavi_Tedavi">
+          <End Role="Tedavi" Type="Self.Tedavi" Multiplicity="1" />
+          <End Role="MuayeneTedavi" Type="Self.MuayeneTedavi" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tedavi">
+              <PropertyRef Name="TedaviID" />
+            </Principal>
+            <Dependent Role="MuayeneTedavi">
+              <PropertyRef Name="TedaviID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PersonelDetay_Personeller">
+          <End Role="Personeller" Type="Self.Personeller" Multiplicity="1" />
+          <End Role="PersonelDetay" Type="Self.PersonelDetay" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Personeller">
+              <PropertyRef Name="PersonelID" />
+            </Principal>
+            <Dependent Role="PersonelDetay">
+              <PropertyRef Name="PDID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Personeller_Hastaneler">
+          <End Role="Hastaneler" Type="Self.Hastaneler" Multiplicity="0..1" />
+          <End Role="Personeller" Type="Self.Personeller" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Hastaneler">
+              <PropertyRef Name="HastaneID" />
+            </Principal>
+            <Dependent Role="Personeller">
+              <PropertyRef Name="HastaneID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Personeller_Unvan">
+          <End Role="Unvan" Type="Self.Unvan" Multiplicity="0..1" />
+          <End Role="Personeller" Type="Self.Personeller" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Unvan">
+              <PropertyRef Name="UnvanID" />
+            </Principal>
+            <Dependent Role="Personeller">
+              <PropertyRef Name="UnvanID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PersonelSifre_Personeller">
+          <End Role="Personeller" Type="Self.Personeller" Multiplicity="1" />
+          <End Role="PersonelSifre" Type="Self.PersonelSifre" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Personeller">
+              <PropertyRef Name="PersonelID" />
+            </Principal>
+            <Dependent Role="PersonelSifre">
+              <PropertyRef Name="PSifreID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+        <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="version" Type="int" Mode="In" />
+          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="version" Type="int" Mode="In" />
+          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <EntityContainer Name="HastaneDLLModelStoreContainer">
+          <EntitySet Name="AltBolge" EntityType="Self.AltBolge" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Bolge" EntityType="Self.Bolge" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Doktorlar" EntityType="Self.Doktorlar" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Hasta" EntityType="Self.Hasta" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Hastaneler" EntityType="Self.Hastaneler" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="HastaTahlil" EntityType="Self.HastaTahlil" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Muayene" EntityType="Self.Muayene" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MuayeneTedavi" EntityType="Self.MuayeneTedavi" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MuayeneTur" EntityType="Self.MuayeneTur" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PersonelDetay" EntityType="Self.PersonelDetay" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Personeller" EntityType="Self.Personeller" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PersonelSifre" EntityType="Self.PersonelSifre" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tahliller" EntityType="Self.Tahliller" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tedavi" EntityType="Self.Tedavi" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TibbiBirimler" EntityType="Self.TibbiBirimler" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Unvan" EntityType="Self.Unvan" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="vw_Doktor" EntityType="Self.vw_Doktor" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vw_Doktor].[DoktorID] AS [DoktorID], 
+    [vw_Doktor].[TBID] AS [TBID], 
+    [vw_Doktor].[Doktor] AS [Doktor], 
+    [vw_Doktor].[TibbiAdi] AS [TibbiAdi]
+    FROM [dbo].[vw_Doktor] AS [vw_Doktor]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_AltBolge_Bolge" Association="Self.FK_AltBolge_Bolge">
+            <End Role="Bolge" EntitySet="Bolge" />
+            <End Role="AltBolge" EntitySet="AltBolge" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Doktorlar_Personeller" Association="Self.FK_Doktorlar_Personeller">
+            <End Role="Personeller" EntitySet="Personeller" />
+            <End Role="Doktorlar" EntitySet="Doktorlar" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Doktorlar_TibbiBirimler" Association="Self.FK_Doktorlar_TibbiBirimler">
+            <End Role="TibbiBirimler" EntitySet="TibbiBirimler" />
+            <End Role="Doktorlar" EntitySet="Doktorlar" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Hastaneler_AltBolge" Association="Self.FK_Hastaneler_AltBolge">
+            <End Role="AltBolge" EntitySet="AltBolge" />
+            <End Role="Hastaneler" EntitySet="Hastaneler" />
+          </AssociationSet>
+          <AssociationSet Name="FK_HastaTahlil_Hasta" Association="Self.FK_HastaTahlil_Hasta">
+            <End Role="Hasta" EntitySet="Hasta" />
+            <End Role="HastaTahlil" EntitySet="HastaTahlil" />
+          </AssociationSet>
+          <AssociationSet Name="FK_HastaTahlil_Tahliller" Association="Self.FK_HastaTahlil_Tahliller">
+            <End Role="Tahliller" EntitySet="Tahliller" />
+            <End Role="HastaTahlil" EntitySet="HastaTahlil" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Muayene_Doktorlar" Association="Self.FK_Muayene_Doktorlar">
+            <End Role="Doktorlar" EntitySet="Doktorlar" />
+            <End Role="Muayene" EntitySet="Muayene" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Muayene_Hasta" Association="Self.FK_Muayene_Hasta">
+            <End Role="Hasta" EntitySet="Hasta" />
+            <End Role="Muayene" EntitySet="Muayene" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Muayene_MuayeneTur" Association="Self.FK_Muayene_MuayeneTur">
+            <End Role="MuayeneTur" EntitySet="MuayeneTur" />
+            <End Role="Muayene" EntitySet="Muayene" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MuayeneTedavi_Muayene" Association="Self.FK_MuayeneTedavi_Muayene">
+            <End Role="Muayene" EntitySet="Muayene" />
+            <End Role="MuayeneTedavi" EntitySet="MuayeneTedavi" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MuayeneTedavi_Tedavi" Association="Self.FK_MuayeneTedavi_Tedavi">
+            <End Role="Tedavi" EntitySet="Tedavi" />
+            <End Role="MuayeneTedavi" EntitySet="MuayeneTedavi" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PersonelDetay_Personeller" Association="Self.FK_PersonelDetay_Personeller">
+            <End Role="Personeller" EntitySet="Personeller" />
+            <End Role="PersonelDetay" EntitySet="PersonelDetay" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Personeller_Hastaneler" Association="Self.FK_Personeller_Hastaneler">
+            <End Role="Hastaneler" EntitySet="Hastaneler" />
+            <End Role="Personeller" EntitySet="Personeller" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Personeller_Unvan" Association="Self.FK_Personeller_Unvan">
+            <End Role="Unvan" EntitySet="Unvan" />
+            <End Role="Personeller" EntitySet="Personeller" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PersonelSifre_Personeller" Association="Self.FK_PersonelSifre_Personeller">
+            <End Role="Personeller" EntitySet="Personeller" />
+            <End Role="PersonelSifre" EntitySet="PersonelSifre" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="HastaneDLLModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="AltBolge">
+          <Key>
+            <PropertyRef Name="AltBolgeID" />
+          </Key>
+          <Property Name="AltBolgeID" Type="Int32" Nullable="false" />
+          <Property Name="AltBolgeAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="BolgeID" Type="Int32" />
+          <NavigationProperty Name="Bolge" Relationship="Self.FK_AltBolge_Bolge" FromRole="AltBolge" ToRole="Bolge" />
+          <NavigationProperty Name="Hastanelers" Relationship="Self.FK_Hastaneler_AltBolge" FromRole="AltBolge" ToRole="Hastaneler" />
+        </EntityType>
+        <EntityType Name="Bolge">
+          <Key>
+            <PropertyRef Name="BolgeID" />
+          </Key>
+          <Property Name="BolgeID" Type="Int32" Nullable="false" />
+          <Property Name="BolgeAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="AltBolges" Relationship="Self.FK_AltBolge_Bolge" FromRole="Bolge" ToRole="AltBolge" />
+        </EntityType>
+        <EntityType Name="Doktorlar">
+          <Key>
+            <PropertyRef Name="DoktorID" />
+          </Key>
+          <Property Name="DoktorID" Type="Int32" Nullable="false" />
+          <Property Name="TBID" Type="Int32" />
+          <Property Name="PersonelID" Type="Int32" />
+          <NavigationProperty Name="Personeller" Relationship="Self.FK_Doktorlar_Personeller" FromRole="Doktorlar" ToRole="Personeller" />
+          <NavigationProperty Name="TibbiBirimler" Relationship="Self.FK_Doktorlar_TibbiBirimler" FromRole="Doktorlar" ToRole="TibbiBirimler" />
+          <NavigationProperty Name="Muayenes" Relationship="Self.FK_Muayene_Doktorlar" FromRole="Doktorlar" ToRole="Muayene" />
+        </EntityType>
+        <EntityType Name="Hasta">
+          <Key>
+            <PropertyRef Name="HastaID" />
+          </Key>
+          <Property Name="HastaID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="HastaAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="HastaSoyAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Tc_Passaport" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="durum" Type="Boolean" />
+          <NavigationProperty Name="HastaTahlils" Relationship="Self.FK_HastaTahlil_Hasta" FromRole="Hasta" ToRole="HastaTahlil" />
+          <NavigationProperty Name="Muayenes" Relationship="Self.FK_Muayene_Hasta" FromRole="Hasta" ToRole="Muayene" />
+          <Property Name="HastaKanGrubu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="HastaBoy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="HastaKilo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="HastaAdres" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="HastaTel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="HastaYas" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Hastaneler">
+          <Key>
+            <PropertyRef Name="HastaneID" />
+          </Key>
+          <Property Name="HastaneID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="HastaneAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="AltBolgeID" Type="Int32" />
+          <Property Name="HastaneTel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="HastaneAdres" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="HastaneMail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="durum" Type="Boolean" />
+          <NavigationProperty Name="AltBolge" Relationship="Self.FK_Hastaneler_AltBolge" FromRole="Hastaneler" ToRole="AltBolge" />
+          <NavigationProperty Name="Personellers" Relationship="Self.FK_Personeller_Hastaneler" FromRole="Hastaneler" ToRole="Personeller" />
+        </EntityType>
+        <EntityType Name="HastaTahlil">
+          <Key>
+            <PropertyRef Name="TahlilID" />
+            <PropertyRef Name="HastaID" />
+          </Key>
+          <Property Name="TahlilID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="HastaID" Type="Int32" Nullable="false" />
+          <Property Name="TahlilTarih" Type="DateTime" Precision="0" />
+          <Property Name="SonucTarih" Type="DateTime" Precision="0" />
+          <Property Name="TahlilSonuc" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Hasta" Relationship="Self.FK_HastaTahlil_Hasta" FromRole="HastaTahlil" ToRole="Hasta" />
+          <NavigationProperty Name="Tahliller" Relationship="Self.FK_HastaTahlil_Tahliller" FromRole="HastaTahlil" ToRole="Tahliller" />
+        </EntityType>
+        <EntityType Name="Muayene">
+          <Key>
+            <PropertyRef Name="MID" />
+          </Key>
+          <Property Name="MID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DoktorID" Type="Int32" />
+          <Property Name="HastaID" Type="Int32" />
+          <Property Name="MTURID" Type="Int32" />
+          <Property Name="MGiris" Type="DateTime" Precision="0" />
+          <Property Name="MCikis" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="Doktorlar" Relationship="Self.FK_Muayene_Doktorlar" FromRole="Muayene" ToRole="Doktorlar" />
+          <NavigationProperty Name="Hasta" Relationship="Self.FK_Muayene_Hasta" FromRole="Muayene" ToRole="Hasta" />
+          <NavigationProperty Name="MuayeneTur" Relationship="Self.FK_Muayene_MuayeneTur" FromRole="Muayene" ToRole="MuayeneTur" />
+          <NavigationProperty Name="MuayeneTedavis" Relationship="Self.FK_MuayeneTedavi_Muayene" FromRole="Muayene" ToRole="MuayeneTedavi" />
+        </EntityType>
+        <EntityType Name="MuayeneTedavi">
+          <Key>
+            <PropertyRef Name="MID" />
+            <PropertyRef Name="TedaviID" />
+          </Key>
+          <Property Name="MID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TedaviID" Type="Int32" Nullable="false" />
+          <Property Name="ReceteAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Muayene" Relationship="Self.FK_MuayeneTedavi_Muayene" FromRole="MuayeneTedavi" ToRole="Muayene" />
+          <NavigationProperty Name="Tedavi" Relationship="Self.FK_MuayeneTedavi_Tedavi" FromRole="MuayeneTedavi" ToRole="Tedavi" />
+        </EntityType>
+        <EntityType Name="MuayeneTur">
+          <Key>
+            <PropertyRef Name="MTURID" />
+          </Key>
+          <Property Name="MTURID" Type="Int32" Nullable="false" />
+          <Property Name="MuayeneTuru" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Muayenes" Relationship="Self.FK_Muayene_MuayeneTur" FromRole="MuayeneTur" ToRole="Muayene" />
+        </EntityType>
+        <EntityType Name="PersonelDetay">
+          <Key>
+            <PropertyRef Name="PDID" />
+          </Key>
+          <Property Name="PDID" Type="Int32" Nullable="false" />
+          <Property Name="PersonelYas" Type="Int32" />
+          <Property Name="PersonelCinsiyet" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PersonelTel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PersonelMail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PersonelAdres" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="durum" Type="Boolean" />
+          <NavigationProperty Name="Personeller" Relationship="Self.FK_PersonelDetay_Personeller" FromRole="PersonelDetay" ToRole="Personeller" />
+        </EntityType>
+        <EntityType Name="Personeller">
+          <Key>
+            <PropertyRef Name="PersonelID" />
+          </Key>
+          <Property Name="PersonelID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PersonelAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PersonelSoyad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PersonelTc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="HastaneID" Type="Int32" />
+          <Property Name="UnvanID" Type="Int32" />
+          <Property Name="Durum" Type="Boolean" />
+          <NavigationProperty Name="Doktorlars" Relationship="Self.FK_Doktorlar_Personeller" FromRole="Personeller" ToRole="Doktorlar" />
+          <NavigationProperty Name="Hastaneler" Relationship="Self.FK_Personeller_Hastaneler" FromRole="Personeller" ToRole="Hastaneler" />
+          <NavigationProperty Name="PersonelDetay" Relationship="Self.FK_PersonelDetay_Personeller" FromRole="Personeller" ToRole="PersonelDetay" />
+          <NavigationProperty Name="Unvan" Relationship="Self.FK_Personeller_Unvan" FromRole="Personeller" ToRole="Unvan" />
+          <NavigationProperty Name="PersonelSifre1" Relationship="HastaneDLLModel.FK_PersonelSifre_Personeller" FromRole="Personeller" ToRole="PersonelSifre" />
+        </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Tahliller">
+          <Key>
+            <PropertyRef Name="TahlilID" />
+          </Key>
+          <Property Name="TahlilID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TahlilTur" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="HastaTahlils" Relationship="Self.FK_HastaTahlil_Tahliller" FromRole="Tahliller" ToRole="HastaTahlil" />
+        </EntityType>
+        <EntityType Name="Tedavi">
+          <Key>
+            <PropertyRef Name="TedaviID" />
+          </Key>
+          <Property Name="TedaviID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TedaviTanim" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="MuayeneTedavis" Relationship="Self.FK_MuayeneTedavi_Tedavi" FromRole="Tedavi" ToRole="MuayeneTedavi" />
+        </EntityType>
+        <EntityType Name="TibbiBirimler">
+          <Key>
+            <PropertyRef Name="TBID" />
+          </Key>
+          <Property Name="TBID" Type="Int32" Nullable="false" />
+          <Property Name="TibbiAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Doktorlars" Relationship="Self.FK_Doktorlar_TibbiBirimler" FromRole="TibbiBirimler" ToRole="Doktorlar" />
+        </EntityType>
+        <EntityType Name="Unvan">
+          <Key>
+            <PropertyRef Name="UnvanID" />
+          </Key>
+          <Property Name="UnvanID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UnvanAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Personellers" Relationship="Self.FK_Personeller_Unvan" FromRole="Unvan" ToRole="Personeller" />
+        </EntityType>
+        <EntityType Name="vw_Doktor">
+          <Key>
+            <PropertyRef Name="DoktorID" />
+            <PropertyRef Name="TBID" />
+            <PropertyRef Name="TibbiAdi" />
+          </Key>
+          <Property Name="DoktorID" Type="Int32" Nullable="false" />
+          <Property Name="TBID" Type="Int32" Nullable="false" />
+          <Property Name="Doktor" Type="String" MaxLength="101" FixedLength="false" Unicode="true" />
+          <Property Name="TibbiAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_AltBolge_Bolge">
+          <End Role="Bolge" Type="Self.Bolge" Multiplicity="0..1" />
+          <End Role="AltBolge" Type="Self.AltBolge" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Bolge">
+              <PropertyRef Name="BolgeID" />
+            </Principal>
+            <Dependent Role="AltBolge">
+              <PropertyRef Name="BolgeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Hastaneler_AltBolge">
+          <End Role="AltBolge" Type="Self.AltBolge" Multiplicity="0..1" />
+          <End Role="Hastaneler" Type="Self.Hastaneler" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AltBolge">
+              <PropertyRef Name="AltBolgeID" />
+            </Principal>
+            <Dependent Role="Hastaneler">
+              <PropertyRef Name="AltBolgeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Doktorlar_Personeller">
+          <End Role="Personeller" Type="Self.Personeller" Multiplicity="0..1" />
+          <End Role="Doktorlar" Type="Self.Doktorlar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Personeller">
+              <PropertyRef Name="PersonelID" />
+            </Principal>
+            <Dependent Role="Doktorlar">
+              <PropertyRef Name="PersonelID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Doktorlar_TibbiBirimler">
+          <End Role="TibbiBirimler" Type="Self.TibbiBirimler" Multiplicity="0..1" />
+          <End Role="Doktorlar" Type="Self.Doktorlar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TibbiBirimler">
+              <PropertyRef Name="TBID" />
+            </Principal>
+            <Dependent Role="Doktorlar">
+              <PropertyRef Name="TBID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Muayene_Doktorlar">
+          <End Role="Doktorlar" Type="Self.Doktorlar" Multiplicity="0..1" />
+          <End Role="Muayene" Type="Self.Muayene" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Doktorlar">
+              <PropertyRef Name="DoktorID" />
+            </Principal>
+            <Dependent Role="Muayene">
+              <PropertyRef Name="DoktorID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_HastaTahlil_Hasta">
+          <End Role="Hasta" Type="Self.Hasta" Multiplicity="1" />
+          <End Role="HastaTahlil" Type="Self.HastaTahlil" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Hasta">
+              <PropertyRef Name="HastaID" />
+            </Principal>
+            <Dependent Role="HastaTahlil">
+              <PropertyRef Name="HastaID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Muayene_Hasta">
+          <End Role="Hasta" Type="Self.Hasta" Multiplicity="0..1" />
+          <End Role="Muayene" Type="Self.Muayene" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Hasta">
+              <PropertyRef Name="HastaID" />
+            </Principal>
+            <Dependent Role="Muayene">
+              <PropertyRef Name="HastaID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Personeller_Hastaneler">
+          <End Role="Hastaneler" Type="Self.Hastaneler" Multiplicity="0..1" />
+          <End Role="Personeller" Type="Self.Personeller" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Hastaneler">
+              <PropertyRef Name="HastaneID" />
+            </Principal>
+            <Dependent Role="Personeller">
+              <PropertyRef Name="HastaneID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_HastaTahlil_Tahliller">
+          <End Role="Tahliller" Type="Self.Tahliller" Multiplicity="1" />
+          <End Role="HastaTahlil" Type="Self.HastaTahlil" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tahliller">
+              <PropertyRef Name="TahlilID" />
+            </Principal>
+            <Dependent Role="HastaTahlil">
+              <PropertyRef Name="TahlilID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Muayene_MuayeneTur">
+          <End Role="MuayeneTur" Type="Self.MuayeneTur" Multiplicity="0..1" />
+          <End Role="Muayene" Type="Self.Muayene" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MuayeneTur">
+              <PropertyRef Name="MTURID" />
+            </Principal>
+            <Dependent Role="Muayene">
+              <PropertyRef Name="MTURID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MuayeneTedavi_Muayene">
+          <End Role="Muayene" Type="Self.Muayene" Multiplicity="1" />
+          <End Role="MuayeneTedavi" Type="Self.MuayeneTedavi" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Muayene">
+              <PropertyRef Name="MID" />
+            </Principal>
+            <Dependent Role="MuayeneTedavi">
+              <PropertyRef Name="MID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MuayeneTedavi_Tedavi">
+          <End Role="Tedavi" Type="Self.Tedavi" Multiplicity="1" />
+          <End Role="MuayeneTedavi" Type="Self.MuayeneTedavi" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tedavi">
+              <PropertyRef Name="TedaviID" />
+            </Principal>
+            <Dependent Role="MuayeneTedavi">
+              <PropertyRef Name="TedaviID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PersonelDetay_Personeller">
+          <End Role="Personeller" Type="Self.Personeller" Multiplicity="1" />
+          <End Role="PersonelDetay" Type="Self.PersonelDetay" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Personeller">
+              <PropertyRef Name="PersonelID" />
+            </Principal>
+            <Dependent Role="PersonelDetay">
+              <PropertyRef Name="PDID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Personeller_Unvan">
+          <End Role="Unvan" Type="Self.Unvan" Multiplicity="0..1" />
+          <End Role="Personeller" Type="Self.Personeller" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Unvan">
+              <PropertyRef Name="UnvanID" />
+            </Principal>
+            <Dependent Role="Personeller">
+              <PropertyRef Name="UnvanID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="HastaneDLLEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="AltBolges" EntityType="Self.AltBolge" />
+          <EntitySet Name="Bolges" EntityType="Self.Bolge" />
+          <EntitySet Name="Doktorlars" EntityType="Self.Doktorlar" />
+          <EntitySet Name="Hastas" EntityType="Self.Hasta" />
+          <EntitySet Name="Hastanelers" EntityType="Self.Hastaneler" />
+          <EntitySet Name="HastaTahlils" EntityType="Self.HastaTahlil" />
+          <EntitySet Name="Muayenes" EntityType="Self.Muayene" />
+          <EntitySet Name="MuayeneTedavis" EntityType="Self.MuayeneTedavi" />
+          <EntitySet Name="MuayeneTurs" EntityType="Self.MuayeneTur" />
+          <EntitySet Name="PersonelDetays" EntityType="Self.PersonelDetay" />
+          <EntitySet Name="Personellers" EntityType="Self.Personeller" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+          <EntitySet Name="Tahlillers" EntityType="Self.Tahliller" />
+          <EntitySet Name="Tedavis" EntityType="Self.Tedavi" />
+          <EntitySet Name="TibbiBirimlers" EntityType="Self.TibbiBirimler" />
+          <EntitySet Name="Unvans" EntityType="Self.Unvan" />
+          <EntitySet Name="vw_Doktor" EntityType="Self.vw_Doktor" />
+          <AssociationSet Name="FK_AltBolge_Bolge" Association="Self.FK_AltBolge_Bolge">
+            <End Role="Bolge" EntitySet="Bolges" />
+            <End Role="AltBolge" EntitySet="AltBolges" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Hastaneler_AltBolge" Association="Self.FK_Hastaneler_AltBolge">
+            <End Role="AltBolge" EntitySet="AltBolges" />
+            <End Role="Hastaneler" EntitySet="Hastanelers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Doktorlar_Personeller" Association="Self.FK_Doktorlar_Personeller">
+            <End Role="Personeller" EntitySet="Personellers" />
+            <End Role="Doktorlar" EntitySet="Doktorlars" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Doktorlar_TibbiBirimler" Association="Self.FK_Doktorlar_TibbiBirimler">
+            <End Role="TibbiBirimler" EntitySet="TibbiBirimlers" />
+            <End Role="Doktorlar" EntitySet="Doktorlars" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Muayene_Doktorlar" Association="Self.FK_Muayene_Doktorlar">
+            <End Role="Doktorlar" EntitySet="Doktorlars" />
+            <End Role="Muayene" EntitySet="Muayenes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_HastaTahlil_Hasta" Association="Self.FK_HastaTahlil_Hasta">
+            <End Role="Hasta" EntitySet="Hastas" />
+            <End Role="HastaTahlil" EntitySet="HastaTahlils" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Muayene_Hasta" Association="Self.FK_Muayene_Hasta">
+            <End Role="Hasta" EntitySet="Hastas" />
+            <End Role="Muayene" EntitySet="Muayenes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Personeller_Hastaneler" Association="Self.FK_Personeller_Hastaneler">
+            <End Role="Hastaneler" EntitySet="Hastanelers" />
+            <End Role="Personeller" EntitySet="Personellers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_HastaTahlil_Tahliller" Association="Self.FK_HastaTahlil_Tahliller">
+            <End Role="Tahliller" EntitySet="Tahlillers" />
+            <End Role="HastaTahlil" EntitySet="HastaTahlils" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Muayene_MuayeneTur" Association="Self.FK_Muayene_MuayeneTur">
+            <End Role="MuayeneTur" EntitySet="MuayeneTurs" />
+            <End Role="Muayene" EntitySet="Muayenes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MuayeneTedavi_Muayene" Association="Self.FK_MuayeneTedavi_Muayene">
+            <End Role="Muayene" EntitySet="Muayenes" />
+            <End Role="MuayeneTedavi" EntitySet="MuayeneTedavis" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MuayeneTedavi_Tedavi" Association="Self.FK_MuayeneTedavi_Tedavi">
+            <End Role="Tedavi" EntitySet="Tedavis" />
+            <End Role="MuayeneTedavi" EntitySet="MuayeneTedavis" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PersonelDetay_Personeller" Association="Self.FK_PersonelDetay_Personeller">
+            <End Role="Personeller" EntitySet="Personellers" />
+            <End Role="PersonelDetay" EntitySet="PersonelDetays" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Personeller_Unvan" Association="Self.FK_Personeller_Unvan">
+            <End Role="Unvan" EntitySet="Unvans" />
+            <End Role="Personeller" EntitySet="Personellers" />
+          </AssociationSet>
+          <FunctionImport Name="sp_alterdiagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="version" Mode="In" Type="Int32" />
+            <Parameter Name="definition" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="sp_creatediagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="version" Mode="In" Type="Int32" />
+            <Parameter Name="definition" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="sp_dropdiagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(HastaneDLLModel.sp_helpdiagramdefinition_Result)">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(HastaneDLLModel.sp_helpdiagrams_Result)">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_renamediagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="new_diagramname" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_upgraddiagrams" />
+          <EntitySet Name="PersonelSifres" EntityType="HastaneDLLModel.PersonelSifre" />
+          <AssociationSet Name="FK_PersonelSifre_Personeller" Association="HastaneDLLModel.FK_PersonelSifre_Personeller">
+            <End Role="Personeller" EntitySet="Personellers" />
+            <End Role="PersonelSifre" EntitySet="PersonelSifres" />
+          </AssociationSet>
+        </EntityContainer>
+        <ComplexType Name="sp_helpdiagramdefinition_Result">
+          <Property Type="Int32" Name="version" Nullable="true" />
+          <Property Type="Binary" Name="definition" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="sp_helpdiagrams_Result">
+          <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+          <Property Type="Int32" Name="OwnerID" Nullable="false" />
+        </ComplexType>
+        <EntityType Name="PersonelSifre">
+          <Key>
+            <PropertyRef Name="PSifreID" />
+          </Key>
+          <Property Name="PSifreID" Type="Int32" Nullable="false" />
+          <Property Name="Sifre" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Durum" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Personeller1" Relationship="HastaneDLLModel.FK_PersonelSifre_Personeller" FromRole="PersonelSifre" ToRole="Personeller" />
+        </EntityType>
+        <Association Name="FK_PersonelSifre_Personeller">
+          <End Type="HastaneDLLModel.Personeller" Role="Personeller" Multiplicity="1" />
+          <End Type="HastaneDLLModel.PersonelSifre" Role="PersonelSifre" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Personeller">
+              <PropertyRef Name="PersonelID" />
+            </Principal>
+            <Dependent Role="PersonelSifre">
+              <PropertyRef Name="PSifreID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="HastaneDLLModelStoreContainer" CdmEntityContainer="HastaneDLLEntities">
+          <EntitySetMapping Name="AltBolges">
+            <EntityTypeMapping TypeName="HastaneDLLModel.AltBolge">
+              <MappingFragment StoreEntitySet="AltBolge">
+                <ScalarProperty Name="AltBolgeID" ColumnName="AltBolgeID" />
+                <ScalarProperty Name="AltBolgeAdi" ColumnName="AltBolgeAdi" />
+                <ScalarProperty Name="BolgeID" ColumnName="BolgeID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Bolges">
+            <EntityTypeMapping TypeName="HastaneDLLModel.Bolge">
+              <MappingFragment StoreEntitySet="Bolge">
+                <ScalarProperty Name="BolgeID" ColumnName="BolgeID" />
+                <ScalarProperty Name="BolgeAdi" ColumnName="BolgeAdi" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Doktorlars">
+            <EntityTypeMapping TypeName="HastaneDLLModel.Doktorlar">
+              <MappingFragment StoreEntitySet="Doktorlar">
+                <ScalarProperty Name="DoktorID" ColumnName="DoktorID" />
+                <ScalarProperty Name="TBID" ColumnName="TBID" />
+                <ScalarProperty Name="PersonelID" ColumnName="PersonelID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Hastas">
+            <EntityTypeMapping TypeName="HastaneDLLModel.Hasta">
+              <MappingFragment StoreEntitySet="Hasta">
+                <ScalarProperty Name="HastaYas" ColumnName="HastaYas" />
+                <ScalarProperty Name="HastaTel" ColumnName="HastaTel" />
+                <ScalarProperty Name="HastaAdres" ColumnName="HastaAdres" />
+                <ScalarProperty Name="HastaKilo" ColumnName="HastaKilo" />
+                <ScalarProperty Name="HastaBoy" ColumnName="HastaBoy" />
+                <ScalarProperty Name="HastaKanGrubu" ColumnName="HastaKanGrubu" />
+                <ScalarProperty Name="HastaID" ColumnName="HastaID" />
+                <ScalarProperty Name="HastaAdi" ColumnName="HastaAdi" />
+                <ScalarProperty Name="HastaSoyAdi" ColumnName="HastaSoyAdi" />
+                <ScalarProperty Name="Tc_Passaport" ColumnName="Tc_Passaport" />
+                <ScalarProperty Name="durum" ColumnName="durum" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Hastanelers">
+            <EntityTypeMapping TypeName="HastaneDLLModel.Hastaneler">
+              <MappingFragment StoreEntitySet="Hastaneler">
+                <ScalarProperty Name="HastaneID" ColumnName="HastaneID" />
+                <ScalarProperty Name="HastaneAdi" ColumnName="HastaneAdi" />
+                <ScalarProperty Name="AltBolgeID" ColumnName="AltBolgeID" />
+                <ScalarProperty Name="HastaneTel" ColumnName="HastaneTel" />
+                <ScalarProperty Name="HastaneAdres" ColumnName="HastaneAdres" />
+                <ScalarProperty Name="HastaneMail" ColumnName="HastaneMail" />
+                <ScalarProperty Name="durum" ColumnName="durum" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HastaTahlils">
+            <EntityTypeMapping TypeName="HastaneDLLModel.HastaTahlil">
+              <MappingFragment StoreEntitySet="HastaTahlil">
+                <ScalarProperty Name="TahlilID" ColumnName="TahlilID" />
+                <ScalarProperty Name="HastaID" ColumnName="HastaID" />
+                <ScalarProperty Name="TahlilTarih" ColumnName="TahlilTarih" />
+                <ScalarProperty Name="SonucTarih" ColumnName="SonucTarih" />
+                <ScalarProperty Name="TahlilSonuc" ColumnName="TahlilSonuc" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Muayenes">
+            <EntityTypeMapping TypeName="HastaneDLLModel.Muayene">
+              <MappingFragment StoreEntitySet="Muayene">
+                <ScalarProperty Name="MID" ColumnName="MID" />
+                <ScalarProperty Name="DoktorID" ColumnName="DoktorID" />
+                <ScalarProperty Name="HastaID" ColumnName="HastaID" />
+                <ScalarProperty Name="MTURID" ColumnName="MTURID" />
+                <ScalarProperty Name="MGiris" ColumnName="MGiris" />
+                <ScalarProperty Name="MCikis" ColumnName="MCikis" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MuayeneTedavis">
+            <EntityTypeMapping TypeName="HastaneDLLModel.MuayeneTedavi">
+              <MappingFragment StoreEntitySet="MuayeneTedavi">
+                <ScalarProperty Name="MID" ColumnName="MID" />
+                <ScalarProperty Name="TedaviID" ColumnName="TedaviID" />
+                <ScalarProperty Name="ReceteAdi" ColumnName="ReceteAdi" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MuayeneTurs">
+            <EntityTypeMapping TypeName="HastaneDLLModel.MuayeneTur">
+              <MappingFragment StoreEntitySet="MuayeneTur">
+                <ScalarProperty Name="MTURID" ColumnName="MTURID" />
+                <ScalarProperty Name="MuayeneTuru" ColumnName="MuayeneTuru" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PersonelDetays">
+            <EntityTypeMapping TypeName="HastaneDLLModel.PersonelDetay">
+              <MappingFragment StoreEntitySet="PersonelDetay">
+                <ScalarProperty Name="PDID" ColumnName="PDID" />
+                <ScalarProperty Name="PersonelYas" ColumnName="PersonelYas" />
+                <ScalarProperty Name="PersonelCinsiyet" ColumnName="PersonelCinsiyet" />
+                <ScalarProperty Name="PersonelTel" ColumnName="PersonelTel" />
+                <ScalarProperty Name="PersonelMail" ColumnName="PersonelMail" />
+                <ScalarProperty Name="PersonelAdres" ColumnName="PersonelAdres" />
+                <ScalarProperty Name="durum" ColumnName="durum" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Personellers">
+            <EntityTypeMapping TypeName="HastaneDLLModel.Personeller">
+              <MappingFragment StoreEntitySet="Personeller">
+                <ScalarProperty Name="PersonelID" ColumnName="PersonelID" />
+                <ScalarProperty Name="PersonelAdi" ColumnName="PersonelAdi" />
+                <ScalarProperty Name="PersonelSoyad" ColumnName="PersonelSoyad" />
+                <ScalarProperty Name="PersonelTc" ColumnName="PersonelTc" />
+                <ScalarProperty Name="HastaneID" ColumnName="HastaneID" />
+                <ScalarProperty Name="UnvanID" ColumnName="UnvanID" />
+                <ScalarProperty Name="Durum" ColumnName="Durum" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="HastaneDLLModel.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tahlillers">
+            <EntityTypeMapping TypeName="HastaneDLLModel.Tahliller">
+              <MappingFragment StoreEntitySet="Tahliller">
+                <ScalarProperty Name="TahlilID" ColumnName="TahlilID" />
+                <ScalarProperty Name="TahlilTur" ColumnName="TahlilTur" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tedavis">
+            <EntityTypeMapping TypeName="HastaneDLLModel.Tedavi">
+              <MappingFragment StoreEntitySet="Tedavi">
+                <ScalarProperty Name="TedaviID" ColumnName="TedaviID" />
+                <ScalarProperty Name="TedaviTanim" ColumnName="TedaviTanim" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TibbiBirimlers">
+            <EntityTypeMapping TypeName="HastaneDLLModel.TibbiBirimler">
+              <MappingFragment StoreEntitySet="TibbiBirimler">
+                <ScalarProperty Name="TBID" ColumnName="TBID" />
+                <ScalarProperty Name="TibbiAdi" ColumnName="TibbiAdi" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Unvans">
+            <EntityTypeMapping TypeName="HastaneDLLModel.Unvan">
+              <MappingFragment StoreEntitySet="Unvan">
+                <ScalarProperty Name="UnvanID" ColumnName="UnvanID" />
+                <ScalarProperty Name="UnvanAdi" ColumnName="UnvanAdi" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vw_Doktor">
+            <EntityTypeMapping TypeName="HastaneDLLModel.vw_Doktor">
+              <MappingFragment StoreEntitySet="vw_Doktor">
+                <ScalarProperty Name="DoktorID" ColumnName="DoktorID" />
+                <ScalarProperty Name="TBID" ColumnName="TBID" />
+                <ScalarProperty Name="Doktor" ColumnName="Doktor" />
+                <ScalarProperty Name="TibbiAdi" ColumnName="TibbiAdi" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="HastaneDLLModel.Store.sp_alterdiagram" />
+          <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="HastaneDLLModel.Store.sp_creatediagram" />
+          <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="HastaneDLLModel.Store.sp_dropdiagram" />
+          <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="HastaneDLLModel.Store.sp_helpdiagramdefinition">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="HastaneDLLModel.sp_helpdiagramdefinition_Result">
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="HastaneDLLModel.Store.sp_helpdiagrams">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="HastaneDLLModel.sp_helpdiagrams_Result">
+                <ScalarProperty Name="Database" ColumnName="Database" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Owner" ColumnName="Owner" />
+                <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="HastaneDLLModel.Store.sp_renamediagram" />
+          <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="HastaneDLLModel.Store.sp_upgraddiagrams" />
+          <EntitySetMapping Name="PersonelSifres">
+            <EntityTypeMapping TypeName="HastaneDLLModel.PersonelSifre">
+              <MappingFragment StoreEntitySet="PersonelSifre">
+                <ScalarProperty Name="Durum" ColumnName="Durum" />
+                <ScalarProperty Name="Sifre" ColumnName="Sifre" />
+                <ScalarProperty Name="PSifreID" ColumnName="PSifreID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram DiagramId="cdf97faaddf34fbc8749dffc99ea4c74" Name="Diagram1" ZoomLevel="55">
+        <EntityTypeShape EntityType="HastaneDLLModel.AltBolge" Width="1.5" PointX="3" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="HastaneDLLModel.Bolge" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HastaneDLLModel.Doktorlar" Width="1.5" PointX="9.75" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="HastaneDLLModel.Hasta" Width="1.5" PointX="9.75" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="HastaneDLLModel.Hastaneler" Width="1.5" PointX="5.25" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="HastaneDLLModel.HastaTahlil" Width="1.5" PointX="12" PointY="11.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="HastaneDLLModel.Muayene" Width="1.5" PointX="12" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="HastaneDLLModel.MuayeneTedavi" Width="1.5" PointX="14.25" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="HastaneDLLModel.MuayeneTur" Width="1.5" PointX="9.75" PointY="15.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="HastaneDLLModel.PersonelDetay" Width="1.5" PointX="9.75" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="HastaneDLLModel.Personeller" Width="1.5" PointX="7.5" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="HastaneDLLModel.sysdiagram" Width="1.5" PointX="0.75" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="HastaneDLLModel.Tahliller" Width="1.5" PointX="9.75" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HastaneDLLModel.Tedavi" Width="1.5" PointX="12" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HastaneDLLModel.TibbiBirimler" Width="1.5" PointX="7.5" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HastaneDLLModel.Unvan" Width="1.5" PointX="5.25" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HastaneDLLModel.vw_Doktor" Width="1.5" PointX="2.75" PointY="8" IsExpanded="true" />
+        <AssociationConnector Association="HastaneDLLModel.FK_AltBolge_Bolge" ManuallyRouted="false" />
+        <AssociationConnector Association="HastaneDLLModel.FK_Hastaneler_AltBolge" ManuallyRouted="false" />
+        <AssociationConnector Association="HastaneDLLModel.FK_Doktorlar_Personeller" ManuallyRouted="false" />
+        <AssociationConnector Association="HastaneDLLModel.FK_Doktorlar_TibbiBirimler" ManuallyRouted="false" />
+        <AssociationConnector Association="HastaneDLLModel.FK_Muayene_Doktorlar" ManuallyRouted="false" />
+        <AssociationConnector Association="HastaneDLLModel.FK_HastaTahlil_Hasta" ManuallyRouted="false" />
+        <AssociationConnector Association="HastaneDLLModel.FK_Muayene_Hasta" ManuallyRouted="false" />
+        <AssociationConnector Association="HastaneDLLModel.FK_Personeller_Hastaneler" ManuallyRouted="false" />
+        <AssociationConnector Association="HastaneDLLModel.FK_HastaTahlil_Tahliller" ManuallyRouted="false" />
+        <AssociationConnector Association="HastaneDLLModel.FK_Muayene_MuayeneTur" ManuallyRouted="false" />
+        <AssociationConnector Association="HastaneDLLModel.FK_MuayeneTedavi_Muayene" ManuallyRouted="false" />
+        <AssociationConnector Association="HastaneDLLModel.FK_MuayeneTedavi_Tedavi" ManuallyRouted="false" />
+        <AssociationConnector Association="HastaneDLLModel.FK_PersonelDetay_Personeller" ManuallyRouted="false" />
+        <AssociationConnector Association="HastaneDLLModel.FK_Personeller_Unvan" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="HastaneDLLModel.PersonelSifre" Width="1.5" PointX="18.625" PointY="5.375" />
+        <AssociationConnector Association="HastaneDLLModel.FK_PersonelSifre_Personeller" />
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

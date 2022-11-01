@@ -1,0 +1,55 @@
+C:\Users\seyma\source\repos\HastaneProje\HastaneOtomasyon\bin\Debug\HastaneOtomasyon.exe.config
+C:\Users\seyma\source\repos\HastaneProje\HastaneOtomasyon\bin\Debug\HastaneOtomasyon.exe
+C:\Users\seyma\source\repos\HastaneProje\HastaneOtomasyon\bin\Debug\HastaneOtomasyon.pdb
+C:\Users\seyma\source\repos\HastaneProje\HastaneOtomasyon\bin\Debug\EntityFramework.dll
+C:\Users\seyma\source\repos\HastaneProje\HastaneOtomasyon\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\seyma\source\repos\HastaneProje\HastaneOtomasyon\bin\Debug\EntityFramework.xml
+C:\Users\seyma\source\repos\HastaneProje\HastaneOtomasyon\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\seyma\source\repos\HastaneProje\HastaneOtomasyon\obj\Debug\HastaneOtomasyon.csproj.AssemblyReference.cache
+C:\Users\seyma\source\repos\HastaneProje\HastaneOtomasyon\obj\Debug\HastaneOtomasyon.Form1.resources
+C:\Users\seyma\source\repos\HastaneProje\HastaneOtomasyon\obj\Debug\HastaneOtomasyon.Properties.Resources.resources
+C:\Users\seyma\source\repos\HastaneProje\HastaneOtomasyon\obj\Debug\HastaneOtomasyon.csproj.GenerateResource.cache
+C:\Users\seyma\source\repos\HastaneProje\HastaneOtomasyon\obj\Debug\HastaneOtomasyon.csproj.CoreCompileInputs.cache
+C:\Users\seyma\source\repos\HastaneProje\HastaneOtomasyon\obj\Debug\HastaneOtomasyon.csproj.CopyComplete
+C:\Users\seyma\source\repos\HastaneProje\HastaneOtomasyon\obj\Debug\HastaneOtomasyon.exe
+C:\Users\seyma\source\repos\HastaneProje\HastaneOtomasyon\obj\Debug\HastaneOtomasyon.pdb
+C:\Users\seyma\OneDrive\Masaüstü\HastaneProje\HastaneOtomasyon\bin\Debug\HastaneOtomasyon.exe.config
+C:\Users\seyma\OneDrive\Masaüstü\HastaneProje\HastaneOtomasyon\bin\Debug\HastaneOtomasyon.exe
+C:\Users\seyma\OneDrive\Masaüstü\HastaneProje\HastaneOtomasyon\bin\Debug\HastaneOtomasyon.pdb
+C:\Users\seyma\OneDrive\Masaüstü\HastaneProje\HastaneOtomasyon\bin\Debug\EntityFramework.dll
+C:\Users\seyma\OneDrive\Masaüstü\HastaneProje\HastaneOtomasyon\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\seyma\OneDrive\Masaüstü\HastaneProje\HastaneOtomasyon\bin\Debug\EntityFramework.xml
+C:\Users\seyma\OneDrive\Masaüstü\HastaneProje\HastaneOtomasyon\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\seyma\OneDrive\Masaüstü\HastaneProje\HastaneOtomasyon\obj\Debug\HastaneOtomasyon.csproj.AssemblyReference.cache
+C:\Users\seyma\OneDrive\Masaüstü\HastaneProje\HastaneOtomasyon\obj\Debug\HastaneOtomasyon.Form1.resources
+C:\Users\seyma\OneDrive\Masaüstü\HastaneProje\HastaneOtomasyon\obj\Debug\HastaneOtomasyon.Properties.Resources.resources
+C:\Users\seyma\OneDrive\Masaüstü\HastaneProje\HastaneOtomasyon\obj\Debug\HastaneOtomasyon.csproj.GenerateResource.cache
+C:\Users\seyma\OneDrive\Masaüstü\HastaneProje\HastaneOtomasyon\obj\Debug\HastaneOtomasyon.csproj.CoreCompileInputs.cache
+C:\Users\seyma\OneDrive\Masaüstü\HastaneProje\HastaneOtomasyon\obj\Debug\HastaneOtomasyon.csproj.CopyComplete
+C:\Users\seyma\OneDrive\Masaüstü\HastaneProje\HastaneOtomasyon\obj\Debug\HastaneOtomasyon.exe
+C:\Users\seyma\OneDrive\Masaüstü\HastaneProje\HastaneOtomasyon\obj\Debug\HastaneOtomasyon.pdb
+C:\Users\seyma\OneDrive\Masaüstü\HastaneProje\HastaneOtomasyon\obj\Debug\HastaneOtomasyon.Form2.resources
+C:\Users\seyma\OneDrive\Masaüstü\HastaneProje\HastaneOtomasyon\obj\Debug\HastaneOtomasyon.Form3.resources
+C:\Users\seyma\OneDrive\Masaüstü\HastaneProje\HastaneOtomasyon\obj\Debug\HastaneOtomasyon.Form4.resources
+C:\Users\seyma\OneDrive\Masaüstü\HastaneProje\HastaneOtomasyon\obj\Debug\HastaneOtomasyon.Form5.resources
+C:\Users\seyma\OneDrive\Masaüstü\HastaneProje\HastaneOtomasyon\obj\Debug\HastaneOtomasyon.Form6.resources
+C:\Users\HP\Desktop\ENTITY HASTANE\HastaneProje\HastaneOtomasyon\bin\Debug\HastaneOtomasyon.exe.config
+C:\Users\HP\Desktop\ENTITY HASTANE\HastaneProje\HastaneOtomasyon\bin\Debug\HastaneOtomasyon.exe
+C:\Users\HP\Desktop\ENTITY HASTANE\HastaneProje\HastaneOtomasyon\bin\Debug\HastaneOtomasyon.pdb
+C:\Users\HP\Desktop\ENTITY HASTANE\HastaneProje\HastaneOtomasyon\bin\Debug\EntityFramework.dll
+C:\Users\HP\Desktop\ENTITY HASTANE\HastaneProje\HastaneOtomasyon\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\HP\Desktop\ENTITY HASTANE\HastaneProje\HastaneOtomasyon\bin\Debug\EntityFramework.xml
+C:\Users\HP\Desktop\ENTITY HASTANE\HastaneProje\HastaneOtomasyon\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\HP\Desktop\ENTITY HASTANE\HastaneProje\HastaneOtomasyon\obj\Debug\HastaneOtomasyon.csproj.AssemblyReference.cache
+C:\Users\HP\Desktop\ENTITY HASTANE\HastaneProje\HastaneOtomasyon\obj\Debug\HastaneOtomasyon.Form1.resources
+C:\Users\HP\Desktop\ENTITY HASTANE\HastaneProje\HastaneOtomasyon\obj\Debug\HastaneOtomasyon.Form2.resources
+C:\Users\HP\Desktop\ENTITY HASTANE\HastaneProje\HastaneOtomasyon\obj\Debug\HastaneOtomasyon.Form3.resources
+C:\Users\HP\Desktop\ENTITY HASTANE\HastaneProje\HastaneOtomasyon\obj\Debug\HastaneOtomasyon.Form4.resources
+C:\Users\HP\Desktop\ENTITY HASTANE\HastaneProje\HastaneOtomasyon\obj\Debug\HastaneOtomasyon.Form5.resources
+C:\Users\HP\Desktop\ENTITY HASTANE\HastaneProje\HastaneOtomasyon\obj\Debug\HastaneOtomasyon.Form6.resources
+C:\Users\HP\Desktop\ENTITY HASTANE\HastaneProje\HastaneOtomasyon\obj\Debug\HastaneOtomasyon.Properties.Resources.resources
+C:\Users\HP\Desktop\ENTITY HASTANE\HastaneProje\HastaneOtomasyon\obj\Debug\HastaneOtomasyon.csproj.GenerateResource.cache
+C:\Users\HP\Desktop\ENTITY HASTANE\HastaneProje\HastaneOtomasyon\obj\Debug\HastaneOtomasyon.csproj.CoreCompileInputs.cache
+C:\Users\HP\Desktop\ENTITY HASTANE\HastaneProje\HastaneOtomasyon\obj\Debug\HastaneOtomasyon.csproj.CopyComplete
+C:\Users\HP\Desktop\ENTITY HASTANE\HastaneProje\HastaneOtomasyon\obj\Debug\HastaneOtomasyon.exe
+C:\Users\HP\Desktop\ENTITY HASTANE\HastaneProje\HastaneOtomasyon\obj\Debug\HastaneOtomasyon.pdb
